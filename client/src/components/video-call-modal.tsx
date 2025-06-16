@@ -56,9 +56,9 @@ export default function VideoCallModal({ isOpen, onClose, profile }: VideoCallMo
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-4xl h-96 p-0 bg-gray-900 border-0" aria-describedby="video-call-description">
+      <DialogContent className="sm:max-w-4xl h-96 p-0 bg-gray-900 border-0">
         <DialogTitle className="sr-only">Video call with {profile.name}</DialogTitle>
-        <DialogDescription id="video-call-description" className="sr-only">
+        <DialogDescription className="sr-only">
           Video call interface with {profile.name}
         </DialogDescription>
         <div className="relative w-full h-full rounded-xl overflow-hidden">

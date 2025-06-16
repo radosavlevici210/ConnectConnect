@@ -101,10 +101,19 @@ export default function ProfileCard({ profile, onChatOpen, onVideoCallOpen }: Pr
             size="sm" 
             variant="outline"
             className="w-full"
-            onClick={() => onChatOpen(profile)}
+            onClick={onChatOpen}
           >
             <MessageCircle className="h-4 w-4 mr-2" />
             Chat
+          </Button>
+          <Button 
+            size="sm" 
+            variant="outline"
+            className="w-full"
+            onClick={onVideoCallOpen}
+          >
+            <Video className="h-4 w-4 mr-2" />
+            Video Call
           </Button>
           
           

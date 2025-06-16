@@ -13,47 +13,55 @@ export function useWebSocket() {
   useEffect(() => {
     const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
     const wsUrl = `${protocol}//${window.location.host}/ws`;
-    
-    ws.current = new WebSocket(wsUrl);
 
-    ws.current.onopen = () => {
-      setConnectionStatus('connected');
-      
-      // Join with a mock profile ID
-      sendMessage({
-        type: 'join',
-        profileId: 1
-      });
-    };
+    try {
+      ws.current = new WebSocket(wsUrl);
 
-    ws.current.onmessage = (event) => {
-      try {
-        const message = JSON.parse(event.data);
-        setLastMessage(message);
-      } catch (error) {
-        console.error('Error parsing WebSocket message:', error);
-      }
-    };
+      ws.current.onopen = () => {
+        setConnectionStatus('connected');
 
-    ws.current.onclose = () => {
-      setConnectionStatus('disconnected');
-    };
+        // Join with a mock profile ID
+        sendMessage({
+          type: 'join',
+          profileId: 1
+        });
+      };
 
-    ws.current.onerror = (error) => {
-      console.error('WebSocket error:', error);
-      setConnectionStatus('disconnected');
-    };
+      ws.current.onmessage = (event) => {
+        try {
+          const message = JSON.parse(event.data);
+          setLastMessage(message);
+        } catch (error) {
+          console.error('Error parsing WebSocket message:', error);
+        }
+      };
 
-    return () => {
-      if (ws.current) {
-        ws.current.close();
-      }
-    };
+      ws.current.onclose = () => {
+        setConnectionStatus('disconnected');
+      };
+
+      ws.current.onerror = (error) => {
+        console.error('WebSocket error:', error);
+        setConnectionStatus('disconnected');
+      };
+
+      return () => {
+        if (ws.current && ws.current.readyState === WebSocket.OPEN) {
+          ws.current.close();
+        }
+      };
+    } catch (error) {
+      console.error('Failed to create WebSocket connection:', error);
+    }
   }, []);
 
   const sendMessage = (message: WebSocketMessage) => {
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
-      ws.current.send(JSON.stringify(message));
+      try {
+        ws.current.send(JSON.stringify(message));
+      } catch (error) {
+        console.error('Error sending WebSocket message:', error);
+      }
     } else {
       console.warn('WebSocket is not connected');
     }

@@ -4,7 +4,9 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
+import ProfileDetails from "@/pages/profile-details";
 import NotFound from "@/pages/not-found";
+import Signup from "@/pages/signup";
 
 function Router() {
   return (

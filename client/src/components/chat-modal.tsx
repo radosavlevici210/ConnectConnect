@@ -65,9 +65,9 @@ export default function ChatModal({ isOpen, onClose, profile }: ChatModalProps) 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md h-96 flex flex-col p-0" aria-describedby="chat-description">
+      <DialogContent className="sm:max-w-md h-96 flex flex-col p-0">
         <DialogTitle className="sr-only">Chat with {profile.name}</DialogTitle>
-        <DialogDescription id="chat-description" className="sr-only">
+        <DialogDescription className="sr-only">
           Send messages and chat with {profile.name}
         </DialogDescription>
         <div className="flex items-center justify-between p-4 border-b flex-row space-y-0">
