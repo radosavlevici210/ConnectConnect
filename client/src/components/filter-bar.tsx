@@ -20,17 +20,25 @@ export default function FilterBar() {
             <SelectItem value="london">London</SelectItem>
             <SelectItem value="manchester">Manchester</SelectItem>
             <SelectItem value="birmingham">Birmingham</SelectItem>
+            <SelectItem value="edinburgh">Edinburgh</SelectItem>
+            <SelectItem value="glasgow">Glasgow</SelectItem>
+            <SelectItem value="bristol">Bristol</SelectItem>
+            <SelectItem value="leeds">Leeds</SelectItem>
+            <SelectItem value="liverpool">Liverpool</SelectItem>
+            <SelectItem value="cardiff">Cardiff</SelectItem>
+            <SelectItem value="newcastle">Newcastle</SelectItem>
           </SelectContent>
         </Select>
 
         <Select value={featuredArea} onValueChange={setFeaturedArea}>
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Featured Areas" />
+            <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="consulting">Consulting</SelectItem>
-            <SelectItem value="coaching">Coaching</SelectItem>
-            <SelectItem value="design">Design</SelectItem>
+            <SelectItem value="independent">Independent</SelectItem>
+            <SelectItem value="agency">Agency</SelectItem>
+            <SelectItem value="elite">Elite</SelectItem>
+            <SelectItem value="vip">VIP</SelectItem>
           </SelectContent>
         </Select>
 
@@ -39,9 +47,15 @@ export default function FilterBar() {
             <SelectValue placeholder="Services" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="business-consulting">Business Consulting</SelectItem>
-            <SelectItem value="life-coaching">Life Coaching</SelectItem>
-            <SelectItem value="creative-services">Creative Services</SelectItem>
+            <SelectItem value="gfe">GFE</SelectItem>
+            <SelectItem value="dinner-dates">Dinner Dates</SelectItem>
+            <SelectItem value="social-events">Social Events</SelectItem>
+            <SelectItem value="travel-companion">Travel Companion</SelectItem>
+            <SelectItem value="overnight">Overnight</SelectItem>
+            <SelectItem value="massage">Massage</SelectItem>
+            <SelectItem value="business-events">Business Events</SelectItem>
+            <SelectItem value="private-time">Private Time</SelectItem>
+            <SelectItem value="social-companion">Social Companion</SelectItem>
           </SelectContent>
         </Select>
 
@@ -50,9 +64,9 @@ export default function FilterBar() {
             <SelectValue placeholder="Experience" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="entry">Entry Level</SelectItem>
-            <SelectItem value="mid">Mid Level</SelectItem>
-            <SelectItem value="senior">Senior Level</SelectItem>
+            <SelectItem value="new">New (1+ Years)</SelectItem>
+            <SelectItem value="experienced">Experienced (2-4 Years)</SelectItem>
+            <SelectItem value="expert">Expert (5+ Years)</SelectItem>
           </SelectContent>
         </Select>
 

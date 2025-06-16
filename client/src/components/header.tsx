@@ -13,7 +13,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-gray-900">Connect Pro</h1>
+            <h1 className="text-xl font-bold text-gray-900">Elite Escorts UK</h1>
             <span className="ml-2 px-2 py-1 bg-primary text-white text-xs rounded-full">
               {stats?.onlineCount || 0}k Online
             </span>
