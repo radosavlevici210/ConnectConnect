@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Upload, User, MapPin, Phone, Star } from "lucide-react";
+import { Upload, User, MapPin, Phone, Star, Shield } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 
 export default function Signup() {
@@ -20,14 +20,12 @@ export default function Signup() {
     featuredArea: "",
     services: [] as string[],
     bio: "",
-    image: ""
+    image: "",
+    ageVerified: true
   });
 
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string>("");
-  const [ageVerified, setAgeVerified] = useState(false);
-  const [termsAccepted, setTermsAccepted] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const serviceOptions = [
     "GFE", "Dinner Companion", "Overnight", "Travel", "Massage", 
@@ -86,7 +84,7 @@ export default function Signup() {
       // Reset form
       setFormData({
         name: "", title: "", location: "", phoneNumber: "", experience: "",
-        featuredArea: "", services: [], bio: "", image: ""
+        featuredArea: "", services: [], bio: "", image: "", ageVerified: true
       });
       setImagePreview("");
       setImageFile(null);
@@ -98,22 +96,10 @@ export default function Signup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!ageVerified) {
-      alert('You must confirm you are 18 years or older to continue');
-      return;
-    }
-    
-    if (!termsAccepted || !privacyAccepted) {
-      alert('You must accept the Terms of Service and Privacy Policy to continue');
-      return;
-    }
-    
     if (!formData.name || !formData.title || !formData.location || !formData.phoneNumber) {
       alert('Please fill in all required fields');
       return;
     }
-    
     signupMutation.mutate(formData);
   };
 
@@ -291,70 +277,27 @@ export default function Signup() {
                 />
               </div>
 
-              {/* Age Verification & Terms */}
-              <div className="space-y-4 p-6 bg-gray-50 rounded-lg border">
-                <h3 className="text-lg font-semibold text-gray-900">Verification Required</h3>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-2">
-                    <Checkbox
-                      id="age-verification"
-                      checked={ageVerified}
-                      onCheckedChange={(checked) => setAgeVerified(checked as boolean)}
-                      className="mt-1"
-                    />
-                    <Label htmlFor="age-verification" className="text-sm leading-relaxed">
-                      <span className="font-medium text-red-600">I confirm that I am 18 years of age or older</span> and legally permitted to provide professional services in my jurisdiction.
-                    </Label>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <Checkbox
-                      id="terms-acceptance"
-                      checked={termsAccepted}
-                      onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
-                      className="mt-1"
-                    />
-                    <Label htmlFor="terms-acceptance" className="text-sm leading-relaxed">
-                      I agree to the <span className="font-medium text-primary underline cursor-pointer">Terms of Service</span> and understand that this platform is for professional business networking only.
-                    </Label>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <Checkbox
-                      id="privacy-acceptance"
-                      checked={privacyAccepted}
-                      onCheckedChange={(checked) => setPrivacyAccepted(checked as boolean)}
-                      className="mt-1"
-                    />
-                    <Label htmlFor="privacy-acceptance" className="text-sm leading-relaxed">
-                      I agree to the <span className="font-medium text-primary underline cursor-pointer">Privacy Policy</span> and consent to the processing of my professional data.
-                    </Label>
-                  </div>
-                </div>
-
-                <div className="text-xs text-gray-600 bg-white p-3 rounded border-l-4 border-amber-400">
-                  <strong>Important:</strong> This platform is for legitimate professional services only. All users must comply with UK business regulations and maintain professional standards at all times.
-                </div>
-              </div>
-
               {/* Submit Button */}
               <div className="flex justify-center pt-6">
                 <Button
                   type="submit"
                   size="lg"
                   className="w-full md:w-auto px-12"
-                  disabled={signupMutation.isPending || !ageVerified || !termsAccepted || !privacyAccepted}
+                  disabled={signupMutation.isPending}
                 >
-                  {signupMutation.isPending ? 'Creating Profile...' : 'Create My Professional Profile'}
+                  {signupMutation.isPending ? 'Creating Profile...' : 'Create My Profile'}
                 </Button>
               </div>
-              
-              {(!ageVerified || !termsAccepted || !privacyAccepted) && (
-                <div className="text-center text-sm text-gray-500">
-                  Please complete all verification requirements above to continue
+
+              {/* 18+ Notice */}
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-6">
+                <div className="flex items-center space-x-2 text-amber-800">
+                  <Shield className="w-5 h-5" />
+                  <p className="text-sm font-medium">
+                    18+ Platform - By creating an account, you confirm you are 18 years or older
+                  </p>
                 </div>
-              )}
+              </div>
             </form>
           </CardContent>
         </Card>

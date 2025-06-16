@@ -39,8 +39,17 @@ export const insertUserSchema = createInsertSchema(users).pick({
   password: true,
 });
 
-export const insertProfileSchema = createInsertSchema(profiles).omit({
-  id: true,
+export const insertProfileSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  title: z.string().min(1, "Title is required"),
+  location: z.string().min(1, "Location is required"),
+  phoneNumber: z.string().min(1, "Phone number is required"),
+  experience: z.string().optional(),
+  featuredArea: z.string().optional(),
+  services: z.array(z.string()).optional().default([]),
+  bio: z.string().optional(),
+  image: z.string().optional(),
+  ageVerified: z.boolean().default(true),
 });
 
 export const insertMessageSchema = createInsertSchema(messages).omit({
