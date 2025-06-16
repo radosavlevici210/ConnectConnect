@@ -32,13 +32,18 @@ export default function FilterBar() {
 
         <Select value={featuredArea} onValueChange={setFeaturedArea}>
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Category" />
+            <SelectValue placeholder="Featured Areas" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="independent">Independent</SelectItem>
-            <SelectItem value="agency">Agency</SelectItem>
-            <SelectItem value="elite">Elite</SelectItem>
-            <SelectItem value="vip">VIP</SelectItem>
+            <SelectItem value="consulting">Consulting</SelectItem>
+            <SelectItem value="coaching">Coaching</SelectItem>
+            <SelectItem value="design">Design</SelectItem>
+            <SelectItem value="technology">Technology</SelectItem>
+            <SelectItem value="marketing">Marketing</SelectItem>
+            <SelectItem value="finance">Finance</SelectItem>
+            <SelectItem value="legal">Legal</SelectItem>
+            <SelectItem value="healthcare">Healthcare</SelectItem>
+            <SelectItem value="real-estate">Real Estate</SelectItem>
           </SelectContent>
         </Select>
 
@@ -47,15 +52,29 @@ export default function FilterBar() {
             <SelectValue placeholder="Services" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="gfe">GFE</SelectItem>
-            <SelectItem value="dinner-dates">Dinner Dates</SelectItem>
-            <SelectItem value="social-events">Social Events</SelectItem>
-            <SelectItem value="travel-companion">Travel Companion</SelectItem>
-            <SelectItem value="overnight">Overnight</SelectItem>
-            <SelectItem value="massage">Massage</SelectItem>
-            <SelectItem value="business-events">Business Events</SelectItem>
-            <SelectItem value="private-time">Private Time</SelectItem>
-            <SelectItem value="social-companion">Social Companion</SelectItem>
+            <SelectItem value="business-consulting">Business Consulting</SelectItem>
+            <SelectItem value="life-coaching">Life Coaching</SelectItem>
+            <SelectItem value="ui-design">UI/UX Design</SelectItem>
+            <SelectItem value="software-development">Software Development</SelectItem>
+            <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
+            <SelectItem value="financial-planning">Financial Planning</SelectItem>
+            <SelectItem value="legal-consulting">Legal Consulting</SelectItem>
+            <SelectItem value="healthcare-consulting">Healthcare Consulting</SelectItem>
+            <SelectItem value="property-consulting">Property Consulting</SelectItem>
+            <SelectItem value="strategy-planning">Strategy Planning</SelectItem>
+            <SelectItem value="market-analysis">Market Analysis</SelectItem>
+            <SelectItem value="wellness">Wellness & Mindfulness</SelectItem>
+            <SelectItem value="leadership">Leadership Training</SelectItem>
+            <SelectItem value="web-development">Web Development</SelectItem>
+            <SelectItem value="seo">SEO & Content Strategy</SelectItem>
+            <SelectItem value="investment">Investment Advisory</SelectItem>
+            <SelectItem value="tax-advisory">Tax Advisory</SelectItem>
+            <SelectItem value="contract-review">Contract Review</SelectItem>
+            <SelectItem value="compliance">Compliance</SelectItem>
+            <SelectItem value="medical-advisory">Medical Advisory</SelectItem>
+            <SelectItem value="mental-health">Mental Health Support</SelectItem>
+            <SelectItem value="real-estate">Real Estate</SelectItem>
+            <SelectItem value="property-management">Property Management</SelectItem>
           </SelectContent>
         </Select>
 
@@ -64,9 +83,9 @@ export default function FilterBar() {
             <SelectValue placeholder="Experience" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="new">New (1+ Years)</SelectItem>
-            <SelectItem value="experienced">Experienced (2-4 Years)</SelectItem>
-            <SelectItem value="expert">Expert (5+ Years)</SelectItem>
+            <SelectItem value="entry">Entry Level</SelectItem>
+            <SelectItem value="mid">Mid Level</SelectItem>
+            <SelectItem value="senior">Senior Level</SelectItem>
           </SelectContent>
         </Select>
 

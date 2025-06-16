@@ -1,6 +1,6 @@
-# Elite Escorts UK - Premium Companion Platform
+# Professional Connect UK - Business Networking Platform
 
-A sophisticated escort and companion platform built with React, Express, and WebSocket technology. Connect with verified elite companions across the UK for dinner dates, social events, travel, and premium companionship services.
+A modern professional networking platform built with React, Express, and WebSocket technology. Connect with verified professionals across the UK for business consulting, coaching, design, technology, and other professional services.
 
 ## Features
 
