@@ -30,6 +30,16 @@ WARNING: This repository is under active surveillance
 - Digital fingerprints are embedded throughout the codebase
 ```
 
+### ⚠️ SCAMMER ALERT
+**ATTENTION: We are aware of fraudulent actors attempting to exploit this platform**
+
+- **Known Threat Actors**: Scammers posing as legitimate businesses including fake representatives from Citrix, Patulis, and Atlassian
+- **Criminal Activity**: Pimps and scammers are actively trying to infiltrate and misuse this platform
+- **Warning Signs**: Be suspicious of unsolicited contact, requests for personal information, or offers that seem too good to be true
+- **Report Immediately**: Any suspicious activity should be reported to authorities and platform administrators
+
+**REMEMBER**: This platform does NOT tolerate illegal activities of any kind. All criminal behavior will be reported to law enforcement.
+
 ### 📞 Contact Information
 For legitimate inquiries about licensing or collaboration:
 - Report suspicious activity immediately
