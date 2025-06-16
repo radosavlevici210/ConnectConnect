@@ -1,4 +1,3 @@
-
 # 🔒 SECURITY NOTICE & OWNERSHIP DECLARATION
 
 ## ⚠️ IMPORTANT WARNING
@@ -33,7 +32,7 @@ WARNING: This repository is under active surveillance
 ### ⚠️ SCAMMER ALERT
 **ATTENTION: We are aware of fraudulent actors attempting to exploit this platform**
 
-- **Known Threat Actors**: Scammers posing as legitimate businesses including fake representatives from Citrix, Patulis, and Atlassian
+- **Known Threat Actors**: Scammers posing as legitimate businesses including fake representatives from Citrix, Mr. Brown, Patulis, and Atlassian
 - **Criminal Activity**: Pimps and scammers are actively trying to infiltrate and misuse this platform
 - **Warning Signs**: Be suspicious of unsolicited contact, requests for personal information, or offers that seem too good to be true
 - **Report Immediately**: Any suspicious activity should be reported to authorities and platform administrators
