@@ -21,6 +21,7 @@ export const profiles = pgTable("profiles", {
   services: text("services").array(),
   experience: text("experience").notNull(),
   featuredArea: text("featured_area").notNull(),
+  phoneNumber: text("phone_number"),
 });
 
 export const messages = pgTable("messages", {

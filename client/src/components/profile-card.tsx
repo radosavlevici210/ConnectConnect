@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Star, MapPin, MessageCircle, Video, Mail, Shield, User } from "lucide-react";
+import { Heart, Star, MapPin, MessageCircle, Video, Mail, Shield, User, Phone } from "lucide-react";
 import type { Profile } from "@shared/schema";
 
 interface ProfileCardProps {
@@ -77,10 +77,17 @@ export default function ProfileCard({ profile, onChatOpen, onVideoCallOpen }: Pr
         
         <p className="text-sm text-gray-600 mb-3">{profile.title}</p>
         
-        <div className="flex items-center text-sm text-gray-500 mb-3">
+        <div className="flex items-center text-sm text-gray-500 mb-2">
           <MapPin className="h-4 w-4 mr-1" />
           <span>{profile.location}</span>
         </div>
+        
+        {profile.phoneNumber && (
+          <div className="flex items-center text-sm text-gray-500 mb-3">
+            <Phone className="h-4 w-4 mr-1" />
+            <span>{profile.phoneNumber}</span>
+          </div>
+        )}
         
         <div className="flex space-x-2">
           <Button 
@@ -101,8 +108,9 @@ export default function ProfileCard({ profile, onChatOpen, onVideoCallOpen }: Pr
             variant="outline" 
             size="icon"
             className="text-gray-600 hover:bg-gray-200"
+            onClick={() => profile.phoneNumber && window.open(`tel:${profile.phoneNumber}`)}
           >
-            <Mail className="h-4 w-4" />
+            <Phone className="h-4 w-4" />
           </Button>
         </div>
       </div>

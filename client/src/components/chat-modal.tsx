@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Send, X } from "lucide-react";
+import { Send, X, Phone, Video } from "lucide-react";
 import { useWebSocket } from "@/hooks/use-websocket";
 import type { Profile, Message } from "@shared/schema";
 

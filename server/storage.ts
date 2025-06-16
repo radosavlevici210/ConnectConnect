@@ -48,7 +48,8 @@ export class MemStorage implements IStorage {
         isVerified: true,
         services: ["Business Consulting", "Strategy Planning"],
         experience: "Senior Level",
-        featuredArea: "Consulting"
+        featuredArea: "Consulting",
+        phoneNumber: "+44 20 7946 0958"
       },
       {
         name: "David Park",
@@ -61,7 +62,8 @@ export class MemStorage implements IStorage {
         isVerified: true,
         services: ["UI Design", "UX Research"],
         experience: "Mid Level",
-        featuredArea: "Design"
+        featuredArea: "Design",
+        phoneNumber: "+44 20 7946 0959"
       },
       {
         name: "Maria Santos",
@@ -74,7 +76,8 @@ export class MemStorage implements IStorage {
         isVerified: true,
         services: ["Life Coaching", "Wellness"],
         experience: "Senior Level",
-        featuredArea: "Coaching"
+        featuredArea: "Coaching",
+        phoneNumber: "+44 20 7946 0960"
       },
       {
         name: "Alex Johnson",
@@ -87,7 +90,8 @@ export class MemStorage implements IStorage {
         isVerified: true,
         services: ["Executive Coaching", "Leadership"],
         experience: "Senior Level",
-        featuredArea: "Coaching"
+        featuredArea: "Coaching",
+        phoneNumber: "+44 20 7946 0961"
       },
       {
         name: "Lisa Chen",
@@ -100,7 +104,8 @@ export class MemStorage implements IStorage {
         isVerified: true,
         services: ["Digital Marketing", "SEO"],
         experience: "Mid Level",
-        featuredArea: "Marketing"
+        featuredArea: "Marketing",
+        phoneNumber: "+44 20 7946 0962"
       },
       {
         name: "Michael Thompson",
@@ -113,7 +118,8 @@ export class MemStorage implements IStorage {
         isVerified: true,
         services: ["Financial Planning", "Investment"],
         experience: "Senior Level",
-        featuredArea: "Finance"
+        featuredArea: "Finance",
+        phoneNumber: "+44 20 7946 0963"
       }
     ];
 
