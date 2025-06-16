@@ -170,6 +170,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.post('/api/profiles', async (req, res) => {
+    try {
+      const profileData = insertProfileSchema.parse(req.body);
+      const profile = await storage.createProfile(profileData);
+      res.json(profile);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: 'Invalid profile data', details: error.errors });
+      }
+      res.status(500).json({ error: 'Failed to create profile' });
+    }
+  });
+
   app.get('/api/stats', async (req, res) => {
     try {
       const profiles = await storage.getAllProfiles();

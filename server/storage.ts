@@ -4,12 +4,12 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  
+
   getAllProfiles(): Promise<Profile[]>;
   getProfile(id: number): Promise<Profile | undefined>;
   createProfile(profile: InsertProfile): Promise<Profile>;
   updateProfileStatus(id: number, status: string, isOnline: boolean): Promise<Profile | undefined>;
-  
+
   getMessages(senderId: number, receiverId: number): Promise<Message[]>;
   createMessage(message: InsertMessage): Promise<Message>;
   markMessagesAsRead(senderId: number, receiverId: number): Promise<void>;
@@ -30,7 +30,7 @@ export class MemStorage implements IStorage {
     this.currentUserId = 1;
     this.currentProfileId = 1;
     this.currentMessageId = 1;
-    
+
     // Initialize with sample profiles
     this.initializeProfiles();
   }
@@ -209,20 +209,17 @@ export class MemStorage implements IStorage {
     return this.profiles.get(id);
   }
 
-  async createProfile(insertProfile: InsertProfile): Promise<Profile> {
+  async createProfile(profile: InsertProfile): Promise<Profile> {
     const id = this.currentProfileId++;
-    const profile: Profile = { 
-      ...insertProfile, 
-      id,
-      rating: insertProfile.rating ?? 45,
-      isOnline: insertProfile.isOnline ?? false,
-      status: insertProfile.status ?? "offline",
-      isVerified: insertProfile.isVerified ?? false,
-      services: insertProfile.services ?? null,
-      phoneNumber: insertProfile.phoneNumber ?? null
+    const newProfile: Profile = {
+      id: this.currentProfileId++,
+      rating: 45, // Default rating for new profiles
+      isOnline: false,
+      status: "offline",
+      ...profile
     };
-    this.profiles.set(id, profile);
-    return profile;
+    this.profiles.set(newProfile.id, newProfile);
+    return newProfile;
   }
 
   async updateProfileStatus(id: number, status: string, isOnline: boolean): Promise<Profile | undefined> {

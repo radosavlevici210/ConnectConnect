@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -46,7 +46,7 @@ export default function ChatModal({ isOpen, onClose, profile }: ChatModalProps) 
     };
 
     setMessages(prev => [...prev, newMessage]);
-    
+
     sendMessage({
       type: 'send_message',
       senderId: 1,
@@ -65,8 +65,12 @@ export default function ChatModal({ isOpen, onClose, profile }: ChatModalProps) 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md h-96 flex flex-col p-0">
-        <DialogHeader className="flex items-center justify-between p-4 border-b flex-row space-y-0">
+      <DialogContent className="sm:max-w-md h-96 flex flex-col p-0" aria-describedby="chat-description">
+        <DialogTitle className="sr-only">Chat with {profile.name}</DialogTitle>
+        <DialogDescription id="chat-description" className="sr-only">
+          Send messages and chat with {profile.name}
+        </DialogDescription>
+        <div className="flex items-center justify-between p-4 border-b flex-row space-y-0">
           <div className="flex items-center">
             <Avatar className="w-10 h-10 mr-3">
               <AvatarImage src={profile.image} alt={profile.name} />
@@ -82,15 +86,15 @@ export default function ChatModal({ isOpen, onClose, profile }: ChatModalProps) 
           <Button variant="ghost" size="icon" onClick={onClose}>
             <X className="h-4 w-4" />
           </Button>
-        </DialogHeader>
-        
+        </div>
+
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           <div className="flex">
             <div className="bg-gray-100 rounded-lg p-3 max-w-xs">
               <p className="text-sm">Hi! I'd be happy to help with your needs. How can I assist you today?</p>
             </div>
           </div>
-          
+
           {messages.map((msg) => (
             <div 
               key={msg.id} 
@@ -107,7 +111,7 @@ export default function ChatModal({ isOpen, onClose, profile }: ChatModalProps) 
           ))}
           <div ref={messagesEndRef} />
         </div>
-        
+
         <div className="p-4 border-t">
           <div className="flex space-x-2">
             <Input

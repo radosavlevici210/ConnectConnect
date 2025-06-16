@@ -29,6 +29,16 @@ export default function Header() {
             <Button variant="ghost" size="icon" className="text-gray-600 hover:text-primary">
               <UserCircle className="h-5 w-5" />
             </Button>
+            <Button variant="outline" size="sm">
+          Sign In
+        </Button>
+        <Button 
+          size="sm" 
+          className="bg-primary hover:bg-primary/90 text-white"
+          onClick={() => window.location.href = '/signup'}
+        >
+          Join Now
+        </Button>
           </div>
         </div>
       </div>

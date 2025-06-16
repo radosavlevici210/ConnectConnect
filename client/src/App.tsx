@@ -10,6 +10,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/profile/:id" component={ProfileDetails} />
       <Route component={NotFound} />
     </Switch>
   );

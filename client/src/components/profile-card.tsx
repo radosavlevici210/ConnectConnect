@@ -43,18 +43,18 @@ export default function ProfileCard({ profile, onChatOpen, onVideoCallOpen }: Pr
           alt={profile.name}
           className="w-full h-64 object-cover"
         />
-        
+
         {/* Online Status */}
         <div className="absolute top-3 left-3 flex items-center bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
           <div className={`w-2 h-2 ${getStatusColor(profile.status)} rounded-full mr-2`}></div>
           <span className="text-xs font-medium text-gray-700">{getStatusText(profile.status)}</span>
         </div>
-        
+
         {/* Heart Icon */}
         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full p-2">
           <Heart className="h-4 w-4 text-gray-400 hover:text-red-500 cursor-pointer transition-colors" />
         </div>
-        
+
         {/* Verified Badge */}
         {profile.isVerified && (
           <div className="absolute bottom-3 left-3 bg-accent text-white px-2 py-1 rounded-full text-xs font-medium flex items-center">
@@ -63,7 +63,7 @@ export default function ProfileCard({ profile, onChatOpen, onVideoCallOpen }: Pr
           </div>
         )}
       </div>
-      
+
       <div className="p-4">
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-semibold text-gray-900">{profile.name}</h3>
@@ -74,44 +74,41 @@ export default function ProfileCard({ profile, onChatOpen, onVideoCallOpen }: Pr
             </span>
           </div>
         </div>
-        
+
         <p className="text-sm text-gray-600 mb-3">{profile.title}</p>
-        
+
         <div className="flex items-center text-sm text-gray-500 mb-2">
           <MapPin className="h-4 w-4 mr-1" />
           <span>{profile.location}</span>
         </div>
-        
+
         {profile.phoneNumber && (
           <div className="flex items-center text-sm text-gray-500 mb-3">
             <Phone className="h-4 w-4 mr-1" />
             <span>{profile.phoneNumber}</span>
           </div>
         )}
-        
-        <div className="flex space-x-2">
+
+        <div className="space-y-2">
           <Button 
-            onClick={onChatOpen}
-            className="flex-1 bg-primary hover:bg-primary/90 text-white text-sm font-medium flex items-center gap-1"
+            size="sm" 
+            className="w-full bg-primary hover:bg-primary/90 text-white"
+            onClick={() => window.location.href = `/profile/${profile.id}`}
           >
-            <MessageCircle className="h-4 w-4" />
+            View Profile
+          </Button>
+          <Button 
+            size="sm" 
+            variant="outline"
+            className="w-full"
+            onClick={() => onChatOpen(profile)}
+          >
+            <MessageCircle className="h-4 w-4 mr-2" />
             Chat
           </Button>
-          <Button 
-            onClick={onVideoCallOpen}
-            className="flex-1 bg-secondary hover:bg-secondary/90 text-white text-sm font-medium flex items-center gap-1"
-          >
-            <Video className="h-4 w-4" />
-            Video
-          </Button>
-          <Button 
-            variant="outline" 
-            size="icon"
-            className="text-gray-600 hover:bg-gray-200"
-            onClick={() => profile.phoneNumber && window.open(`tel:${profile.phoneNumber}`)}
-          >
-            <Phone className="h-4 w-4" />
-          </Button>
+          
+          
+          
         </div>
       </div>
     </div>
