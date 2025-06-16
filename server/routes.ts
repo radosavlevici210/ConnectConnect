@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { WebSocketServer, WebSocket } from "ws";
 import { storage } from "./storage";
-import { insertMessageSchema } from "@shared/schema";
+import { insertMessageSchema, insertProfileSchema } from "@shared/schema";
 import { z } from "zod";
 
 interface WebSocketClient extends WebSocket {
