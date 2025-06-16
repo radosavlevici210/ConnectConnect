@@ -41,7 +41,7 @@ export default function ProfileGrid({ onChatOpen, onVideoCallOpen }: ProfileGrid
       {/* Stats and See More */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-semibold text-gray-900">
-          {profiles.length} UK Professionals Available
+          {profiles.length} UK Escorts Available
         </h2>
         <Button variant="link" className="text-primary hover:text-primary/80 font-medium">
           See More

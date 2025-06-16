@@ -1,28 +1,28 @@
-# Professional Connect UK - Business Networking Platform
+# Elite Dating UK - Premium Escort Platform
 
-A modern professional networking platform built with React, Express, and WebSocket technology. Connect with verified professionals across the UK for business consulting, coaching, design, technology, and other professional services.
+A premium escort dating platform built with React, Express, and WebSocket technology. Connect with verified elite companions across the UK for dinner dates, social events, travel companionship, and intimate experiences.
 
 ## Features
 
 ### 🌟 Core Features
-- **Elite Companion Profiles** - Browse verified premium escorts and companions
+- **Professional Profiles** - Browse verified business professionals and consultants
 - **Real-time Messaging** - Instant chat with WebSocket integration
 - **Video Call Support** - Built-in video calling functionality
 - **Phone Integration** - Direct phone calling with UK numbers
-- **Stories System** - Instagram-style companion stories
+- **Stories System** - Instagram-style professional updates
 - **Advanced Filtering** - Filter by location, services, experience level, and more
 - **Online Status** - Real-time availability indicators
-- **Verification Badges** - Verified companion status
+- **Verification Badges** - Verified professional status
 
 ### 🏢 Service Categories
-- **GFE (Girlfriend Experience)** - Intimate companionship and emotional connection
-- **Dinner Dates** - Elegant dining experiences and social companionship
-- **Social Events** - Professional companion for parties, galas, and functions
-- **Travel Companion** - Luxury travel and vacation companionship
-- **Overnight Services** - Extended companionship experiences
-- **Massage Services** - Relaxation and wellness treatments
-- **Business Events** - Professional companion for corporate functions
-- **Private Time** - Intimate personal companionship
+- **Business Consulting** - Strategy planning, market analysis, process optimization
+- **Life & Executive Coaching** - Career development, leadership training, wellness coaching
+- **Design Services** - UI/UX design, web design, prototyping, user testing
+- **Technology Services** - Software development, web development, mobile apps, DevOps
+- **Marketing Services** - Digital marketing, SEO, social media, content strategy
+- **Financial Services** - Financial planning, investment advisory, tax consulting
+- **Legal Services** - Legal consulting, contract review, compliance, IP law
+- **Healthcare Services** - Medical advisory, wellness programs, mental health support
 
 ### 📍 UK Locations Covered
 - London

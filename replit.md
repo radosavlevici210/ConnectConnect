@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack escort companion platform called "Elite Escorts UK" built with React, Express, and PostgreSQL. The application allows users to browse verified escort profiles, engage in real-time chat, and initiate video calls. It features a modern UI built with shadcn/ui components and Tailwind CSS, with real-time communication powered by WebSockets.
+This is a full-stack professional networking platform called "Professional Connect UK" built with React, Express, and PostgreSQL. The application allows users to browse verified professional profiles, engage in real-time chat, and initiate video calls. It features a modern UI built with shadcn/ui components and Tailwind CSS, with real-time communication powered by WebSockets.
 
 ## System Architecture
 
